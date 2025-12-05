@@ -1,0 +1,8 @@
+{
+  "name": "UOL Flash Gamificado",
+  "description": "Uma experiência social gamificada estilo TikTok integrando Guia de Compras e Clube UOL, com personalização via IA.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

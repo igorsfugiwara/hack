@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#F3B121" />
+    <meta name="description" content="UOL Flash - A nova experiência gamificada de consumo de conteúdo e benefícios exclusivos." />
+    
+    <!-- Social Share Meta Tags -->
+    <meta property="og:title" content="UOL Flash Gamificado" />
+    <meta property="og:description" content="Ganhe Flash Coins assistindo vídeos e troque por recompensas incríveis." />
+    <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/UOL_logo.svg/1200px-UOL_logo.svg.png" />
+    <meta property="og:type" content="website" />
+
+    <title>UOL Flash | Gamificação</title>
+    
+    <!-- External Libs (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              uol: {
+                yellow: '#F3B121',
+                black: '#1C1C1C',
+                gray: '#333333',
+                light: '#F4F4F4'
+              }
+            },
+            fontFamily: {
+              sans: ['"Arial"', 'sans-serif'], // UOLtext fallback
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.3s ease-out forwards',
+              'slide-up': 'slideUp 0.4s ease-out forwards',
+              'bounce-gentle': 'bounceGentle 2s infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              bounceGentle: {
+                '0%, 100%': { transform: 'translateY(-5%)' },
+                '50%': { transform: 'translateY(0)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Styles -->
+    <style>
+      /* Base Reset & Fonts */
+      @font-face {
+        font-family: 'UOLtext';
+        src: local('Arial');
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+      body {
+        background-color: #000;
+        color: white;
+        overflow: hidden; /* App-like feel */
+        touch-action: pan-y; /* Optimize scroll */
+      }
+
+      /* Scrollbar Hiding Utility */
+      .no-scrollbar::-webkit-scrollbar {
+          display: none;
+      }
+      .no-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+
+      /* Tap Highlight Removal for Mobile */
+      * {
+        -webkit-tap-highlight-color: transparent;
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
+    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.1/client",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.31.0",
+    "react/jsx-runtime": "https://aistudiocdn.com/react@^19.2.1/jsx-runtime",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Environment Mocks for Browser/Iframe compatibility -->
+    <script>
+      if (!window.syncHeight) {
+        window.syncHeight = (element, force) => {
+           // Stub for iframe height syncing logic
+        };
+      }
+    </script>
+    
+    <!-- Entry Point -->
+    <script type="module" src="./index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
